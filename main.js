@@ -58,9 +58,25 @@ app.use((err, req, res, next)=>{
 //1
 
 authRouter.get("/users", (req, res, next) => {
-  res.json(users);
-  next();
+  res.json(users)
+  next()
 });
 
 //2
+authRouter.use("/",(req, res, next)=>{
+  console.log(req.body.name)
+  next()
+})
+authRouter.post("/users/create",(req, res, next)=>{
+  users.push(req.body.name)
+  res.json(users)
+  next()
+})
 
+
+//3
+const prodectRouter = express.Router()
+app.git("/products",authRouter,(req,res)=>{
+})
+
+//4
