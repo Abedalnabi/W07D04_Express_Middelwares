@@ -2,6 +2,7 @@ const express = require("express");
 
 const app = express();
 const port = 3000;
+const authRouter = express.Router();
 
 const users = ["John", "Mark"];
 
@@ -53,4 +54,13 @@ app.use((err, req, res, next)=>{
   })
 })
 
+//practice 
+//1
+
+authRouter.get("/users", (req, res, next) => {
+  res.json(users);
+  next();
+});
+
+//2
 
