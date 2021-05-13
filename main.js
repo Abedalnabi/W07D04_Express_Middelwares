@@ -80,3 +80,10 @@ app.git("/products",authRouter,(req,res)=>{
 })
 
 //4
+
+const products =["keyboard","mouse"]
+
+prodectRouter.get("/products/update",(req, res, next)=>{
+  res.json(users)
+  next()
+})
